@@ -6,5 +6,12 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_session_limit">SessionLimitActivity</string>
     <string name="title_activity_session">SessionActivity</string>
+    <string name="button_start">Start drinking session</string>
+    <string name="label_activities">Past Activities</string>
+    <string name="label_limit">What is your drink limit?</string>
+    <string name="switch_no">No</string>
+    <string name="switch_yes">Yes</string>
+    <string name="label_food">Did you have food yet?</string>
+    <string name="button_startSession">Start session</string>
 
 </resources>

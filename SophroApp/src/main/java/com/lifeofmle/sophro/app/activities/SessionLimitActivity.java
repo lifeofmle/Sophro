@@ -1,9 +1,12 @@
 package com.lifeofmle.sophro.app.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.lifeofmle.sophro.app.R;
 
@@ -12,7 +15,12 @@ public class SessionLimitActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_session_limit);
+
+        Intent intent = getIntent();
+        
+
+
+        //setContentView(R.layout.activity_session_limit);
     }
 
 
@@ -36,4 +44,16 @@ public class SessionLimitActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onAddLimit(View view){
+
+    }
+
+    public void onSubtractLimit(View view){
+
+    }
+
+    public void updateLimit(View view, int value){
+        TextView textView = (TextView) findViewById(R.id.label_limitCount);
+        textView.setText(value);
+    }
 }

@@ -1,9 +1,14 @@
-package com.lifeofmle.sophro.app;
+package com.lifeofmle.sophro.app.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.lifeofmle.sophro.app.R;
+import com.lifeofmle.sophro.app.common.Session;
 
 public class MainActivity extends Activity {
 
@@ -35,4 +40,15 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void executeStart(View view) {
+
+        Intent intent = new Intent(this, SessionLimitActivity.class);
+
+        Session session = new Session();
+
+        intent.putExtra(ActivityTopics.StartNewSession, session);
+
+        startActivity(intent);
+
+    }
 }
