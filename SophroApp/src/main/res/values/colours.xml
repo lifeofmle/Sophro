@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="DefaultBackgroundColor">#FFFFFFFF</color>
+    <color name="Transparent">#00000000</color>
+    <color name="OverlimitBackgroundColor">#8AFF0008</color>
+    <color name="OkColor">#8a4bb460</color>
+    <color name="ProgressColor">#ffffa200</color>
+    <color name="ProgressForegroundColor">#fffff5d7</color>
+    <color name="TimeBackgroundColor">#ffeeeef2</color>
+    <color name="SessionSummaryBackgroundColor">#ffffffff</color>
+    <color name="SessionSummaryHeaderBackgroundColor">#ffc6c6c6</color>
+    <color name="SessionSummaryTextColor">#ff969696</color>
+</resources>

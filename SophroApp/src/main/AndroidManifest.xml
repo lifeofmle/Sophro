@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lifeofmle.sophro.app" >
+    package="com.lifeofmle.drinksy.app" >
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.lifeofmle.drinksy.app"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
         <activity
-            android:name=".activities.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.lifeofmle.drinksy.app.activities.MainActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,12 +33,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.lifeofmle.sophro.app.activities.SessionLimitActivity"
-            android:label="@string/title_activity_session_limit" >
+            android:name="com.lifeofmle.drinksy.app.activities.SessionLimitActivity"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:label="@string/title_activity_session_limit"
+            android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.lifeofmle.sophro.app.activities.SessionActivity"
-            android:label="@string/title_activity_session" >
+            android:name="com.lifeofmle.drinksy.app.activities.SessionActivity"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.lifeofmle.drinksy.app.activities.SessionSummaryActivity"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:label="Session Summary"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.lifeofmle.drinksy.app.activities.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/FullscreenTheme"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

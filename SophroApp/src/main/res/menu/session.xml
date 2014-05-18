@@ -1,9 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.lifeofmle.sophro.app.activities.SessionActivity" >
-    
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+    tools:context="com.lifeofmle.drinksy.app.activities.SessionActivity" >
+
+    <item android:id="@+id/action_water"
+        android:icon="@drawable/water"
+        android:title="@string/action_water"
+        android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_editLimit"
+        android:title="@string/action_editLimit"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_endSession"
+        android:title="@string/action_endSession"
         android:orderInCategory="100"
         android:showAsAction="never" />
 </menu>

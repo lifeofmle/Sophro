@@ -1,0 +1,68 @@
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/summary_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lifeofmle.drinksy.app.activities.SessionSummaryActivity">
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_session"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#2c2c2c" >
+
+            <TextView
+                android:text="@string/label_sessionActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <ListView
+            android:id="@+id/listview_summaryactivity"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+        </ListView>
+
+        <RelativeLayout
+            android:id="@+id/layout_empty_sessions"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal|clip_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="-30dp"
+                android:text="@string/empty_sessions_summary" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:background="@color/SessionSummaryHeaderBackgroundColor">
+        <TextView
+            android:id="@+id/label_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:text="Friday"/>
+        <TextView
+            android:id="@+id/label_date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            android:text="May 9, 2014"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@color/SessionSummaryBackgroundColor">
+
+        <LinearLayout
+            android:id="@+id/panel_sessionStatus"
+            android:layout_width="6dp"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:background="@color/OverlimitBackgroundColor">
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/icon_sessionStatusIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_action_good"/>
+
+        <View
+            android:layout_height="fill_parent"
+            android:layout_width="1dp"
+            android:background="@android:color/darker_gray" />
+        <TextView
+            android:id="@+id/label_sessionLimit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="6"
+            android:textColor="#ff848484" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="3dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/target"/>
+        <TextView
+            android:id="@+id/label_sessionDrinkCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="6"
+            android:textColor="#ff848484" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/beer"/>
+        <TextView
+            android:id="@+id/label_sessionWaterCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="6"
+            android:textColor="#ff848484" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/water"/>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:textSize="10dp"
+                    android:textColor="@color/SessionSummaryTextColor"
+                    android:text="Start"/>
+                <TextView
+                    android:id="@+id/label_sessionStartTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:text="18:00"
+                    android:textColor="@color/SessionSummaryTextColor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:textSize="10dp"
+                    android:textColor="@color/SessionSummaryTextColor"
+                    android:text="End"/>
+
+                <TextView
+                    android:id="@+id/label_sessionEndTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textColor="@color/SessionSummaryTextColor"
+                    android:text="18:00"/>
+            </LinearLayout>
+        </LinearLayout>
+
+     </LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>
