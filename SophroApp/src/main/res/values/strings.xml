@@ -15,7 +15,7 @@
     <string name="button_proceedToSession">Proceed to session</string>
     <string name="button_addDrink">Finished a drink</string>
     <string name="label_sessionActivity">Activity</string>
-    <string name="label_remainingDrinks">Remaining Drinks</string>
+    <string name="label_remainingDrinks">remaining</string>
     <string name="label_timeDuration">Time to next drink</string>
     <string name="action_endSession">End session</string>
     <string name="button_resume">Resume drinking session</string>

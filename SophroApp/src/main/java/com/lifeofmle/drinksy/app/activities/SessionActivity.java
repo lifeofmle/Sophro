@@ -170,15 +170,15 @@ public class SessionActivity extends Activity {
         ProgressBar progressBarLimit = (ProgressBar) findViewById(R.id.progressBar_limit);
         progressBarLimit.setMax(session.getMaximumCount());
 
-        LinearLayout remaining_layout = (LinearLayout) findViewById(R.id.panel_remainingArea);
+        LinearLayout panel_overlimit = (LinearLayout) findViewById(R.id.panel_overlimit);
 
         int remainingCount = session.getRemainingCount();
         if (remainingCount >= 0){
             progressBarLimit.setProgress(session.getRemainingCount());
-            remaining_layout.setBackgroundColor(getResources().getColor(R.color.DefaultBackgroundColor));
+            panel_overlimit.setVisibility(View.GONE);
         }else{
             progressBarLimit.setProgress(0);
-            remaining_layout.setBackgroundColor(getResources().getColor(R.color.OverlimitBackgroundColor));
+            panel_overlimit.setVisibility(View.VISIBLE);
         }
 
         updateSessionStatus();

@@ -52,7 +52,7 @@ android:minHeight="40dp">
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:layout_gravity="center_vertical"
-    android:background="@color/TimeBackgroundColor">
+    android:background="@color/OverlimitBackgroundColor">
     <TextView
         android:id="@+id/label_alertItemTime"
         android:layout_width="wrap_content"

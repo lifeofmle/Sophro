@@ -24,4 +24,23 @@
 
     <style name="ButtonBarButton" />
 
+    <style name="MyActionBar"
+        parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/ProgressColor</item>
+    </style>
+
+    <style name="TransparentTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/ActionBarStyle.Transparent</item>
+    </style>
+
+    <style name="ActionBarStyle.Transparent" parent="@android:Widget.ActionBar">
+        <item name="android:background">@color/ProgressColor</item>
+        <item name="android:titleTextStyle">@style/ActionBarStyle.Transparent.TitleTextStyle</item>
+    </style>
+
+    <style name="ActionBarStyle.Transparent.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
 </resources>

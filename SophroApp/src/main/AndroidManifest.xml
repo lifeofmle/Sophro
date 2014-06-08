@@ -40,7 +40,7 @@
         </activity>
         <activity
             android:name="com.lifeofmle.drinksy.app.activities.SessionActivity"
-            android:theme="@android:style/Theme.Holo.Light"
+            android:theme="@style/TransparentTheme"
             android:screenOrientation="portrait">
         </activity>
         <activity

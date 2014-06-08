@@ -12,10 +12,11 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/panel_overlimit"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/OverlimitBackgroundColor"
-            android:visibility="gone">
+            android:visibility="visible">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,130 +43,120 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:id="@+id/panel_remainingArea"
+            android:orientation="horizontal"
+            android:background="@color/ProgressColor">
+
+            <RelativeLayout
                 android:layout_weight="1"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"
-                    android:layout_margin="5dp"
-                    android:text="@string/label_remainingDrinks"/>
-
-                <TextView
-                    android:id="@+id/label_remainingCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="0dp"
-                    android:text="0"
-                    android:textSize="40dp" />
-                <ProgressBar
+                android:background="#ffF4C676">
+                <com.lifeofmle.drinksy.app.components.VerticalProgressBar
                     android:id="@+id/progressBar_limit"
                     android:layout_width="fill_parent"
-                    android:layout_height="5dp"
+                    android:layout_height="fill_parent"
                     style="@android:style/Widget.ProgressBar.Horizontal"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="60dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/ProgressColor" />
-            </LinearLayout>
-
-            <View
-                android:layout_height="fill_parent"
-                android:layout_width="1dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@android:color/darker_gray" />
-
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:background="@color/DefaultBackgroundColor">
-                <TextView
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:progressDrawable="@drawable/vertical_progress"/>
+                <com.lifeofmle.drinksy.app.components.ProgressWheel
+                    android:id="@+id/progressWheel_timer"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textSize="15dp"
-                    android:layout_margin="5dp"
-                    android:text="@string/label_timeDuration"/>
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="100dp"
+                    app:contourColor="#ffffff"
+                    app:rimColor="@color/ProgressForegroundColor"
+                    app:barLength="60dp"
+                    app:barColor="@color/ProgressForegroundColor"
+                    app:barWidth="10dp"
+                    app:rimWidth="5dp"/>
 
-                <RelativeLayout
-                    android:layout_marginTop="-15dp"
+                <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="95dp">
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/label_remainingCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ff4e4c54"
+                        android:text="0"
+                        android:textSize="60dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-10dp"
+                        android:textColor="#ff4e4c54"
+                        android:textSize="15dp"
+                        android:text="@string/label_remainingDrinks"/>
+                </LinearLayout>
 
-                    <com.lifeofmle.drinksy.app.components.ProgressWheel
-                        android:id="@+id/progressWheel_timer"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginBottom="2dp"
-                        app:contourColor="#ffffff"
-                        app:rimColor="#33ff7c23"
-                        app:barLength="60dp"
-                        app:barColor="@color/ProgressColor"
-                        app:barWidth="5dp"
-                        app:rimWidth="2dp"/>
-
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="13dp"
+                    android:gravity="center_horizontal|bottom">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="-5dp"
+                        android:textSize="12dp"
+                        android:textColor="#ff4e4c54"
+                        android:text="@string/label_timeDuration"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="-10dp"
-                        android:layout_centerInParent="true">
-                        <TextView
-                            android:id="@+id/label_overDuration"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textSize="6dp"
-                            android:layout_marginBottom="-5dp"
-                            android:visibility="gone"
-                            android:text="@string/label_over_nextdrinktime"/>
+                        android:orientation="horizontal">
                         <TextView
                             android:id="@+id/label_remainingTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textSize="32dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
+                            android:textSize="15dp"
+                            android:textColor="#ff4e4c54"
                             android:text="50"/>
                         <TextView
                             android:id="@+id/label_remainingTimeUnit"
-                            android:layout_marginTop="-10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textSize="12dp"
-                            android:layout_marginBottom="5dp"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="3dp"
+                            android:textColor="#ff4e4c54"
                             android:text="mins"/>
                     </LinearLayout>
+                </LinearLayout>
 
-                </RelativeLayout>
-            </LinearLayout>
+            </RelativeLayout>
+
+
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button_addDrink"
-            android:layout_margin="5dp"
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:background="@color/ProgressColor"
-            android:textSize="22dp"
-            android:text="@string/button_addDrink"
-            android:onClick="onAddDrink"/>
+            android:layout_height="wrap_content"
+            android:background="#ffF4C676">
+
+            <Button
+                android:id="@+id/button_addDrink"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/ProgressColor"
+                android:textColor="@color/ProgressForegroundColor"
+                android:textSize="22dp"
+                android:text="@string/button_addDrink"
+                android:onClick="onAddDrink"/>
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -191,6 +182,8 @@
                 android:textColor="#ffffff" />
 
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -254,7 +247,6 @@
                     android:text="@string/empty_activities_water_tip" />
             </RelativeLayout>
         </LinearLayout>
-
 
     </LinearLayout>
 </RelativeLayout>

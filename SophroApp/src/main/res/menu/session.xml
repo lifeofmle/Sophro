@@ -3,7 +3,7 @@
     tools:context="com.lifeofmle.drinksy.app.activities.SessionActivity" >
 
     <item android:id="@+id/action_water"
-        android:icon="@drawable/water"
+        android:icon="@drawable/ic_action_water"
         android:title="@string/action_water"
         android:showAsAction="ifRoom" />
 
