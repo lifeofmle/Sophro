@@ -60,6 +60,13 @@ public class SessionSummaryActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.session_summary, menu);
+
+        if (session.getEndDate() == null) {
+            MenuItem item = menu.findItem(R.id.action_delete);
+            item.setVisible(false);
+            this.invalidateOptionsMenu();
+        }
+
         return true;
     }
 
@@ -116,7 +123,11 @@ public class SessionSummaryActivity extends Activity {
         textView_startdate.setText(formatter.format(session.getStartDate()));
 
         TextView textView_enddate = (TextView) findViewById(R.id.label_sessionEndTime);
-        textView_enddate.setText(formatter.format(session.getEndDate()));
+        if (session.getEndDate() != null) {
+            textView_enddate.setText(formatter.format(session.getEndDate()));
+        }else{
+            textView_enddate.setText("--:--");
+        }
 
         SimpleDateFormat dayFormat = new SimpleDateFormat(DateUtility.DAY_FORMAT);
         TextView textView_day = (TextView) findViewById(R.id.label_day);
@@ -171,7 +182,7 @@ public class SessionSummaryActivity extends Activity {
     }
 
     private void onDeleteSession(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, PastSessionActivity.class);
         intent.putExtra(IntentKeys.DELETE_SESSION, session);
         startActivity(intent);
     }

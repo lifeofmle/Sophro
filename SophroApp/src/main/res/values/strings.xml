@@ -36,6 +36,7 @@
     <string name="empty_activities_water_tip">(Water helps you stay hydrated and reduces the time for your next drink)</string>
     <string name="label_over_nextdrinktime">over</string>
     <string name="action_water">Add water</string>
+    <string name="action_details">View details</string>
     <string name="dialog_add_water_prompt">Would you like to drink some water?</string>
     <string name="label_activityStatus"></string>
     <string name="label_sessionSummary">May 08 2014 - 4hr session</string>
@@ -43,6 +44,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="action_share">Share via</string>
-
+    <string name="title_activity_past_session">Past Sessions</string>
+    <string name="button_past_sessions">History</string>
 
 </resources>

@@ -28,6 +28,7 @@ import com.lifeofmle.drinksy.app.utilities.PreferencesManager;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SessionActivity extends Activity {
 
@@ -104,6 +105,12 @@ public class SessionActivity extends Activity {
         updateView(session);
     }
 
+    public void executeSessionSummary(View view){
+        Intent intent = new Intent(getBaseContext(), SessionSummaryActivity.class);
+        intent.putExtra(IntentKeys.SESSION_SUMMARY, session);
+        startActivity(intent);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -166,7 +173,6 @@ public class SessionActivity extends Activity {
         listViewActivities.setEmptyView(emptyView);
         listViewActivities.setAdapter(adapter);
 
-
         ProgressBar progressBarLimit = (ProgressBar) findViewById(R.id.progressBar_limit);
         progressBarLimit.setMax(session.getMaximumCount());
 
@@ -180,6 +186,28 @@ public class SessionActivity extends Activity {
             progressBarLimit.setProgress(0);
             panel_overlimit.setVisibility(View.VISIBLE);
         }
+
+        TextView textView_limit = (TextView) findViewById(R.id.label_sessionLimit);
+        textView_limit.setText(String.valueOf(session.getMaximumCount()));
+
+        List<SessionItem> items = session.getItems();
+        int drinkCount = 0;
+        int waterCount = 0;
+        if (items != null){
+            for (SessionItem item : items){
+                if (item.getItemType().equals(SessionItemType.Drink)){
+                    drinkCount++;
+                } else if (item.getItemType().equals(SessionItemType.Water)){
+                    waterCount++;
+                }
+            }
+        }
+
+        TextView textView_drink = (TextView) findViewById(R.id.label_sessionDrinkCount);
+        textView_drink.setText(String.valueOf(drinkCount));
+
+        TextView textView_water = (TextView) findViewById(R.id.label_sessionWaterCount);
+        textView_water.setText(String.valueOf(waterCount));
 
         updateSessionStatus();
 

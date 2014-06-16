@@ -33,43 +33,36 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
+        Intent intent = getIntent();
+
+        boolean startNewSession = false;
+
         Object objSessionRepository = PreferencesManager.getPreferences(this, PreferenceKeys.SESSION_REPOSITORY, SessionRepository.class);
-        if (objSessionRepository != null) {
-            sessionRepository = (SessionRepository) objSessionRepository;
+        if (objSessionRepository != null){
+            sessionRepository = (SessionRepository)objSessionRepository;
         }
 
         if (sessionRepository == null){
             sessionRepository = new SessionRepository();
         }
 
-        Intent intent = getIntent();
-
-        boolean startNewSession = false;
-
-        Serializable intentSession = intent.getSerializableExtra(IntentKeys.DELETE_SESSION);
-
+        Serializable intentSession = intent.getSerializableExtra(IntentKeys.END_SESSION);
         if (intentSession != null){
-            deleteSession((Session)intentSession);
 
+            // End session
+            Session oldSession = (Session)intentSession;
+            oldSession.endSession();
+
+            // Save the session
+            saveSession(oldSession);
+
+            // Delete old session
+            intentSession = null;
+
+            startNewSession = true;
         }else{
-            intentSession = intent.getSerializableExtra(IntentKeys.END_SESSION);
-            if (intentSession != null){
-
-                // End session
-                Session oldSession = (Session)intentSession;
-                oldSession.endSession();
-
-                // Save the session
-                saveSession(oldSession);
-
-                // Delete old session
-                intentSession = null;
-
-                startNewSession = true;
-            }else{
-                if (intentSession == null){
-                    intentSession = intent.getSerializableExtra(IntentKeys.SESSION);
-                }
+            if (intentSession == null){
+                intentSession = intent.getSerializableExtra(IntentKeys.SESSION);
             }
         }
 
@@ -89,8 +82,6 @@ public class MainActivity extends Activity {
         else{
             currentSession = (Session)intentSession;
         }
-
-        loadSessions();
     }
 
     @Override
@@ -129,6 +120,12 @@ public class MainActivity extends Activity {
     public void executeResume(View view){
         Intent intent = new Intent(this, SessionActivity.class);
         intent.putExtra(IntentKeys.SESSION, currentSession);
+        startActivity(intent);
+    }
+
+    public void executePastSessions(View view){
+        Intent intent = new Intent(this, PastSessionActivity.class);
+        intent.putExtra(IntentKeys.SESSION_REPOSITORY, sessionRepository);
         startActivity(intent);
     }
 
@@ -177,49 +174,5 @@ public class MainActivity extends Activity {
         // Save session
         List<Session> sessions = sessionRepository.getSessions();
         sessions.add(0, session);
-    }
-
-    private void deleteSession(Session session){
-
-        // Remove session
-        List<Session> sessions = sessionRepository.getSessions();
-        int index = sessions.indexOf(session);
-        if (index >= 0){
-            sessions.remove(index);
-        }
-
-        Toast toast = Toast.makeText(this, R.string.label_session_deleted, Toast.LENGTH_SHORT);
-        toast.show();
-
-        loadSessions();
-    }
-
-    private void loadSessions(){
-        // Get listview
-        ListView listViewSessions = (ListView)findViewById(R.id.past_activities);
-
-        if (adapter == null){
-            adapter = new SessionAdapter(this, R.layout.layout_session, sessionRepository.getSessions());
-        }
-
-        View emptyView = findViewById(R.id.layout_empty_sessions);
-        listViewSessions.setEmptyView(emptyView);
-        listViewSessions.setAdapter(adapter);
-
-        listViewSessions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
-                final Object item = parent.getItemAtPosition(position);
-
-                Session pastSession = (Session)item;
-
-                Intent intent = new Intent(getBaseContext(), SessionSummaryActivity.class);
-                intent.putExtra(IntentKeys.SESSION_SUMMARY, pastSession);
-                startActivity(intent);
-            }
-        });
-
-
     }
 }

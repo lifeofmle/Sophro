@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PastSessionActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/past_activities"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            >
+
+        </ListView>
+
+        <RelativeLayout
+            android:id="@+id/layout_empty_sessions"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal|clip_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="-30dp"
+                android:text="@string/empty_sessions" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal|clip_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="@string/empty_sessions_suggestion" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

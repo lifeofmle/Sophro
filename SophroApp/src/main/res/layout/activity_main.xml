@@ -54,61 +54,27 @@
 
             </LinearLayout>
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="#2c2c2c" >
-
-            <TextView
-                android:text="@string/label_activities"
-                android:layout_width="wrap_content"
+            <LinearLayout
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical|left"
-                android:layout_margin="5dp"
-                android:textColor="#ffffff" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
-
-            <ListView
-                android:id="@+id/past_activities"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                >
-
-            </ListView>
-
-            <RelativeLayout
-                android:id="@+id/layout_empty_sessions"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:visibility="gone">
-
-                <TextView
+                android:layout_width="match_parent"
+                android:background="#ffffff"
+                android:padding="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/button_past_sessions"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_gravity="center_horizontal|clip_horizontal"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:layout_marginTop="-30dp"
-                    android:text="@string/empty_sessions" />
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_gravity="center_horizontal|clip_horizontal"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/empty_sessions_suggestion" />
+                    android:layout_height="60dp"
+                    android:background="@color/ProgressColor"
+                    android:textColor="@color/ProgressForegroundColor"
+                    android:text="@string/button_past_sessions"
+                    android:onClick="executePastSessions"/>
+            </LinearLayout>
 
-            </RelativeLayout>
+
         </LinearLayout>
 
     </LinearLayout>

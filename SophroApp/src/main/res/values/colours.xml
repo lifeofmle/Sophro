@@ -5,10 +5,13 @@
     <color name="OverlimitBackgroundColor">#ffff7772</color>
     <color name="OkColor">#8a4bb460</color>
     <color name="ProgressColor">#ffffa200</color>
-    <color name="ProgressForegroundColor">#fffff5d7</color>
+    <color name="ProgressFillColor">#ffef9300</color>
+    <color name="TextForegroundColor">#ff4e4c54</color>
+    <color name="ProgressForegroundColor">#fff6eccf</color>
     <color name="TimeBackgroundColor">#ffeeeef2</color>
     <color name="SessionSummaryBackgroundColor">#ffffffff</color>
     <color name="SessionSummaryHeaderBackgroundColor">#ffc6c6c6</color>
     <color name="SessionSummaryTextColor">#ff969696</color>
     <color name="ProgressBackground">#ffffff</color>
+
 </resources>
